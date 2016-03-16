@@ -5,7 +5,8 @@ onto your own server! This plugin was orginally developed by Falceso, and Ultra-
 If you want to become part of the developing crew, you must follow our requirements [here](https://codedsoup.com/requirements).
 
 # License
-The MIT License (MIT) 
+The MIT License (MIT)
+
 Copyright (c) 2016 Falceso
 
 Copyright (c) 2016 Aspectful
