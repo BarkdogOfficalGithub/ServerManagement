@@ -3,5 +3,7 @@
 # Coded by Falceso, and Aspectful (UltraDEV).
 #
 
-owner: falceso
-
+owners:
+  - falceso
+coowners:
+  - Aspectful
