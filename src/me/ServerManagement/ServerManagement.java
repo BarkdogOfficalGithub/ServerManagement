@@ -11,10 +11,10 @@ public class ServerManagement extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		/*
-		 * When Starting display this message:
+		 * When enabling display this message:
 		 * 
-		 * [Server thread/INFO]: [ServerManagement] Enabling ServerManagement v5.05
-		 * [Server thread/INFO]: - Starting ServerManagement 5.05 by falceso.
+		 * [Server thread/INFO]: [ServerManagement] Enabling ServerManagement v1.2.5
+		 * [Server thread/INFO]: - Starting ServerManagement 1.2.5 by falceso, and Aspectful.
 		 * [Server thread/INFO]: - Orginally made for the CosmicNetworks server; owned by falceso
 		 */
 		
@@ -24,6 +24,14 @@ public class ServerManagement extends JavaPlugin {
 
 	@Override
 	public void onDisable() {
+		/*
+		 * When disabling display this message:
+		 * 
+		 * [Server thread/INFO]: [ServerManagement] Enabling ServerManagement v1.2.5
+		 * [Server thread/INFO]: - Starting ServerManagement 1.2.5 by falceso, and Aspectful.
+		 * [Server thread/INFO]: - Orginally made for the CosmicNetworks server; owned by falceso
+		 */
+		 
 		Bukkit.getLogger().info("ALERT: Server has stopped responding! HELP!");
 		Bukkit.getLogger().info(" - Disabling ServerManagement "+ getDescription().getVersion() + " by " + getDescription().getAuthors());
 	}
