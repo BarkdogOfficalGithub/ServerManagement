@@ -40,11 +40,13 @@ public class PlayerListener extends JavaPlugin implements Listener {
          event.setJoinMessage(ChatColor.AQUA + player.getName() + ChatColor.GRAY + " is the " + ChatColor.RED + "Owner" + ChatColor.GRAY + " of the server" + ChatColor.DARK_GRAY + "!");
          player.setOp(true);
          player.setPlayerListName(ChatColor.RED + "Owner" + ChatColor.WHITE + player.getName());
+         player.sendMessage(ChatColor.GRAY + "Hello, Owner!");
        }
        if (getConfig().getStringList("coowners").contains(player.getName())) {
          event.setJoinMessage(ChatColor.AQUA + player.getName() + ChatColor.GRAY + " is the " + ChatColor.DARK_AQUA + "Co Owner" + ChatColor.GRAY + " of the server" + ChatColor.DARK_GRAY + "!");
          player.setOp(true);
-         player.setPlayerListName(ChatColor.DARK_AQUA + "CoOwner" + ChatColor.WHITE + player.getName());       	
+         player.setPlayerListName(ChatColor.DARK_AQUA + "CoOwner" + ChatColor.WHITE + player.getName());
+         player.sendMessage(ChatColor.GRAY + "Hello, Co Owner!");
        }
      }
      
