@@ -1,7 +1,7 @@
 # ServerManagement
 ServerManagement (aka cManage, which means CosmicManage or sManage, which means ServerManage)
 This plugin was orginally developed by CosmicNetworks, but we'll allow you to host this plugin
-onto your own server! This plugin was orginally developed by Falceso, and Ultra-DEV known as Aspectful.
+onto your own server! This plugin was orginally developed by Falceso, and Aspectful.
 If you want to become part of the developing crew, you must follow our requirements [here](https://codedsoup.com/requirements).
 
 # License
