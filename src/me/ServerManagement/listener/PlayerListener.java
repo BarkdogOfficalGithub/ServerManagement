@@ -11,10 +11,6 @@ import me.ServerManagement.ServerListPingEvent;
 */
 import me.ServerManagement.ServerManagement;
 
-
-
-
-
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -25,12 +21,40 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class PlayerListener extends JavaPlugin implements Listener {
      ServerManagement plugin;
+     public String rank = null;
      public PlayerListener (ServerManagement passedPlugin)
      {
      	this.plugin = passedPlugin;
      	plugin.getServer().getPluginManager().registerEvents(this, plugin);
      }
+
+     public static String colorizeThis(String string) {
+     	return ChatColor.translateAlternateColorCodes('&', string);
+     }
 	
+     public void onRankSet(String rank) // Recommended to be removed - changes chat formation.
+     {
+     	if (rank == null)
+     	{
+     		this.rank = null;
+     	} else
+     	{
+     		this.rank = colorizeThis(rank) + ChatColor.WHITE;
+     	}
+     }
+     
+     public String gatherRank() // Recommended to be removed - changes chat formation.
+     {
+     	return this.rank;
+     }
+
+     @EventHandler
+     public void onPlayerChat(AsyncPlayerChatEvent event) { // Recommended to be removed - changes chat formation.
+     	if (gatherRank() != null) {
+     		event.setFormat(getRank().replaceAll("%", "%%") + " %1$s §8»§7 %2$s");
+     	}
+     }
+     
      @EventHandler
      public void joinAndOther(PlayerJoinEvent event)
      {
@@ -40,12 +64,14 @@ public class PlayerListener extends JavaPlugin implements Listener {
          event.setJoinMessage(ChatColor.AQUA + player.getName() + ChatColor.GRAY + " is the " + ChatColor.RED + "Owner" + ChatColor.GRAY + " of the server" + ChatColor.DARK_GRAY + "!");
          player.setOp(true);
          player.setPlayerListName(ChatColor.RED + "Owner" + ChatColor.WHITE + player.getName());
+         setRank("&8[&cOwner&8]"); // Recommended to be removed - changes chat formation.
          player.sendMessage(ChatColor.GRAY + "Hello, Owner!");
        }
        if (getConfig().getStringList("coowners").contains(player.getName())) {
          event.setJoinMessage(ChatColor.AQUA + player.getName() + ChatColor.GRAY + " is the " + ChatColor.DARK_AQUA + "Co Owner" + ChatColor.GRAY + " of the server" + ChatColor.DARK_GRAY + "!");
          player.setOp(true);
          player.setPlayerListName(ChatColor.DARK_AQUA + "CoOwner" + ChatColor.WHITE + player.getName());
+         setRank("&8[&3Co Owner&8]"); // Recommended to be removed - changes chat formation.
          player.sendMessage(ChatColor.GRAY + "Hello, Co Owner!");
        }
      }
