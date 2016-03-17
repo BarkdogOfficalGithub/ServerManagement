@@ -1,0 +1,4 @@
+name: ServerManagement
+main: me.ServerManagement.ServerManagement
+authors: [falceso, Aspectful]
+version: 1.2.5
