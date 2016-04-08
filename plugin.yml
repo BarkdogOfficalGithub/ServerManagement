@@ -1,4 +1,18 @@
 name: ServerManagement
-main: me.ServerManagement.ServerManagement
-authors: [falceso, Aspectful]
-version: 1.2.5
+main: me.ServerManagement.ServerManagement 
+version: 3.2.0
+description: ServerManagement
+authors: [falceso]
+commands:
+   ilikesm:
+     description: Shows information about how to help with ServerManagement plugin.
+     usage: Incorrect args! Do /<command> [reload]
+   cc:
+     description: Clears the global chat.
+     usage: Incorrect args! Do /<command>
+   cmc:
+     description: Clears your own chat.
+     usage: Incorrect args! Do /<command>
+   sm:
+     description: Info for ServerManagement.
+     usage: Incorrect args! Do /<command>
